@@ -1,0 +1,26 @@
+# Xcode
+.DS_Store
+*.swp
+*.xcuserstate
+*.xcuserdatad
+*.xccheckout
+*.xcscmblueprint
+*.xcworkspace
+!default.xcworkspace
+xcuserdata/
+build/
+DerivedData/
+
+# CocoaPods
+Pods/
+
+# App-specific
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Misc
+*.log
+*.backup
+*.orig
