@@ -17,21 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Second" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGq-kf-OCE">
-                                <rect key="frame" x="153.5" y="430" width="107" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6Q-Fw-Lig">
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aUL-7d-gge"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="pGq-kf-OCE" firstAttribute="centerY" secondItem="B8K-K2-Zto" secondAttribute="centerY" id="FdB-8R-PY6"/>
-                            <constraint firstItem="pGq-kf-OCE" firstAttribute="centerX" secondItem="B8K-K2-Zto" secondAttribute="centerX" id="HxH-Sm-hFI"/>
+                            <constraint firstItem="aUL-7d-gge" firstAttribute="bottom" secondItem="l6Q-Fw-Lig" secondAttribute="bottom" id="65A-fm-iod"/>
+                            <constraint firstItem="l6Q-Fw-Lig" firstAttribute="leading" secondItem="aUL-7d-gge" secondAttribute="leading" id="d9A-f8-CPP"/>
+                            <constraint firstItem="aUL-7d-gge" firstAttribute="trailing" secondItem="l6Q-Fw-Lig" secondAttribute="trailing" id="gFn-be-zbW"/>
+                            <constraint firstItem="l6Q-Fw-Lig" firstAttribute="top" secondItem="aUL-7d-gge" secondAttribute="top" id="jmK-d4-a5G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="NH2-ab-QOc"/>
+                    <connections>
+                        <outlet property="webView" destination="l6Q-Fw-Lig" id="Bq5-FN-3NB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5JG-cW-dta" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
