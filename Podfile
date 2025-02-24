@@ -4,12 +4,14 @@ platform :ios, '13.0'
 target 'Forms Gen' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-  # Add the Firebase pod for Google Analytics
-  pod 'Firebase/Analytics'
-  # Add the pod for Firebase Cloud Messaging
-  pod 'Firebase/Messaging'
-  
+  # Add the Firebase pods
+  pod 'FirebaseAnalytics'
+  pod 'FirebaseAuth'
+  pod 'FirebaseFirestore'
   pod 'FirebaseCrashlytics'
+  
+  # Add the pod for Firebase Cloud Messaging
+  # pod 'Firebase/Messaging' # Uncomment this line to use FCM
   
   pod "KRProgressHUD"
   

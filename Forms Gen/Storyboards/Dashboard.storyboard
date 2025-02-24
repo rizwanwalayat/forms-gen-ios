@@ -288,7 +288,7 @@
             </objects>
             <point key="canvasLocation" x="303" y="-1335"/>
         </scene>
-        <!--Dashboard-->
+        <!--All Forms-->
         <scene sceneID="0tP-xR-2G4">
             <objects>
                 <viewController id="XxB-a1-Dx8" sceneMemberID="viewController">
@@ -310,7 +310,7 @@
                             <constraint firstItem="iyF-Qo-2jg" firstAttribute="centerY" secondItem="TBl-KJ-gTP" secondAttribute="centerY" id="kyw-LI-5Oi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Dashboard" id="IFC-n2-q0O">
+                    <navigationItem key="navigationItem" title="All Forms" id="IFC-n2-q0O">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="line.horizontal.3" catalog="system" id="hwH-lM-hvt">
                             <connections>
                                 <segue destination="4bN-Ye-JGx" kind="presentation" id="ggz-3R-Aki"/>

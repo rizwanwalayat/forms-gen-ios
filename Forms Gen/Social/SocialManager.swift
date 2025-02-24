@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseAuth
 import GoogleSignIn
 import AuthenticationServices
 import FBSDKShareKit
@@ -41,18 +43,28 @@ class SocialManager: NSObject {
 
     fileprivate func loginWithGoogleWithDelegate(delegate: SocialManagerDelegate) {
         self.delegateSocialManager = delegate
-
+        
         if let safeDelegate = delegateSocialManager as? UIViewController {
             GIDSignIn.sharedInstance.signIn(withPresenting: safeDelegate) { signInResult, error in
                 if error == nil {
-                    if let safeDelegate = self.delegateSocialManager {
-                        safeDelegate.didLoginSuccessFully(socialType: SocialLoginType.google)
+                    if let user = signInResult?.user,
+                       let idToken = user.idToken?.tokenString {
+                        let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+                                                                       accessToken: user.accessToken.tokenString)
+                        // Firebase SignIn
+                        Auth.auth().signIn(with: credential) { authResult, error in
+                            if let authResult {
+                                print("Firebase User signed In: ", authResult.user.uid)
+                                if let safeDelegate = self.delegateSocialManager {
+                                    safeDelegate.didLoginSuccessFully(socialType: SocialLoginType.google)
+                                }
+                            }
+                        }
                     }
                 }
             }
         }
     }
-
     fileprivate func loginWithFacebookWithDelegate(delegate: SocialManagerDelegate) {
         self.delegateSocialManager = delegate
 

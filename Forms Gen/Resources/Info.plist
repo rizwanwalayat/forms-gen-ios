@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>fbauth2</string>
-	</array>
-	<key>FacebookDisplayName</key>
-	<string>MvvmBoilerPlate</string>
-	<key>FacebookAppID</key>
-	<string>296435078011222</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -37,12 +29,22 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.994840772293-nei8ut2jtogar1de15vnl2esdbe6iib9</string>
+				<string>com.googleusercontent.apps.688858459945-c5lgfppuu9e0sl6dv50djjd8nmm1rm4e</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>296435078011222</string>
+	<key>FacebookDisplayName</key>
+	<string>MvvmBoilerPlate</string>
+	<key>GIDClientID</key>
+	<string>688858459945-c5lgfppuu9e0sl6dv50djjd8nmm1rm4e.apps.googleusercontent.com</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -85,8 +87,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>GIDClientID</key>
-	<string>994840772293-nei8ut2jtogar1de15vnl2esdbe6iib9.apps.googleusercontent.com</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

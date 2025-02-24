@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreData
-import Firebase
+import FirebaseCore
 import IQKeyboardManager
 import GoogleSignIn
 import FacebookCore
@@ -21,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        Messaging.messaging().delegate = self
         IQKeyboardManager.shared().isEnabled = true
         // Restore Prevous Google Sign In
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
@@ -29,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               // Show the app's signed-out state.
             } else {
               // Show the app's signed-in state.
+                RedirectionHelper.redirectToDashboard()
             }
           }
         // Initialize GoogleSign-in
@@ -59,7 +59,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        Messaging.messaging().apnsToken = deviceToken
     }
 
     // MARK: - Helper Method
@@ -133,18 +132,5 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Swift.Void) {
         print("Do what ever you want")
-    }
-}
-
-extension AppDelegate: MessagingDelegate {
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        guard let fcmToken = fcmToken else { return }
-
-        print("Firebase registration token: \(fcmToken)")
-
-        let dataDict: [String: String] = ["token": fcmToken]
-        NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)
-        // TODO: If necessary send token to application server.
-        // Note: This callback is fired at each app startup and whenever a new token is generated.
     }
 }

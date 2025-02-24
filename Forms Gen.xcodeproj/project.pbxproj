@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04ABD5512D4ED771002D098A /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABD5502D4ED771002D098A /* FormViewController.swift */; };
+		04C3607F2D5F878F00EEC72C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04C3607E2D5F878F00EEC72C /* GoogleService-Info.plist */; };
 		30301D5190A7D144789DD25A /* Pods_Forms_Gen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AE13CFD37D3874F065BF3B /* Pods_Forms_Gen.framework */; };
 		3926D3BCCDD3F02EAD4ABDBD /* Pods_Forms_GenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 746297F2C03D0368C1D2A264 /* Pods_Forms_GenUITests.framework */; };
 		6CDD652F23E16C0900329245 /* SocialManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDD652E23E16C0900329245 /* SocialManager.swift */; };
@@ -51,7 +52,6 @@
 		DCA1BFBB23858B6C00580709 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA1BFBA23858B6C00580709 /* ResetPasswordViewModel.swift */; };
 		DCA1BFBD23858E7900580709 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA1BFBC23858E7900580709 /* ResetPasswordViewController.swift */; };
 		DCCD1AD823C768D8004DD775 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCCD1AD723C768D8004DD775 /* HomeViewController.swift */; };
-		DCFA300A238C27A80025AD6D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCFA3009238C27A80025AD6D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		04ABD5502D4ED771002D098A /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
+		04C3607E2D5F878F00EEC72C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1068F04768182A744BC0A6F8 /* Pods-Forms Gen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms Gen.release.xcconfig"; path = "Target Support Files/Pods-Forms Gen/Pods-Forms Gen.release.xcconfig"; sourceTree = "<group>"; };
 		1BEA691EE12589EC805F3A6F /* Pods-Forms GenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms GenUITests.release.xcconfig"; path = "Target Support Files/Pods-Forms GenUITests/Pods-Forms GenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1C33E9D20C2DE080423C5C97 /* Pods-Forms GenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms GenTests.debug.xcconfig"; path = "Target Support Files/Pods-Forms GenTests/Pods-Forms GenTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,7 +129,6 @@
 		DCA1BFBA23858B6C00580709 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		DCA1BFBC23858E7900580709 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		DCCD1AD723C768D8004DD775 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		DCFA3009238C27A80025AD6D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E15528F818484EDFC2601EEF /* Pods_Forms_GenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forms_GenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -205,7 +205,6 @@
 			isa = PBXGroup;
 			children = (
 				DC1E55B22383BCF00012D77E /* Forms Gen */,
-				DCFA3009238C27A80025AD6D /* GoogleService-Info.plist */,
 				DC1E55CC2383BCF30012D77E /* Forms GenTests */,
 				DC1E55D72383BCF30012D77E /* Forms GenUITests */,
 				DC1E55B12383BCF00012D77E /* Products */,
@@ -227,6 +226,7 @@
 		DC1E55B22383BCF00012D77E /* Forms Gen */ = {
 			isa = PBXGroup;
 			children = (
+				04C3607E2D5F878F00EEC72C /* GoogleService-Info.plist */,
 				6CE7FC6B23E06E2000E37900 /* Forms Gen.entitlements */,
 				DC6A04D523FE8BA1004069AD /* NetworkManager */,
 				6CDD652D23E16BF000329245 /* Social */,
@@ -537,10 +537,10 @@
 			files = (
 				DC1E55C32383BCF30012D77E /* LaunchScreen.storyboard in Resources */,
 				DC44D2A123C70E87006A3B30 /* Dashboard.storyboard in Resources */,
-				DCFA300A238C27A80025AD6D /* GoogleService-Info.plist in Resources */,
 				DC46F265238D08FF005E70BA /* Settings.bundle in Resources */,
 				DC1E55C02383BCF30012D77E /* Assets.xcassets in Resources */,
 				DC1E55BB2383BCF00012D77E /* Main.storyboard in Resources */,
+				04C3607F2D5F878F00EEC72C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
