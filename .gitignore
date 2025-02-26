@@ -11,6 +11,9 @@ xcuserdata/
 build/
 DerivedData/
 
+# Google plist
+GoogleService-Info.plist
+
 # CocoaPods
 Pods/
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04A43B962D6F045E00A317C4 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A43B942D6F045E00A317C4 /* LocalizationKeys.swift */; };
+		04A43B9D2D6F30C100A317C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A43B9B2D6F30C100A317C4 /* Localizable.strings */; };
+		04A43B9E2D6F30C100A317C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A43B982D6F30C100A317C4 /* Localizable.strings */; };
 		04ABD5512D4ED771002D098A /* FormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABD5502D4ED771002D098A /* FormViewController.swift */; };
 		04C3607F2D5F878F00EEC72C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04C3607E2D5F878F00EEC72C /* GoogleService-Info.plist */; };
 		30301D5190A7D144789DD25A /* Pods_Forms_Gen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AE13CFD37D3874F065BF3B /* Pods_Forms_Gen.framework */; };
@@ -72,6 +75,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A43B942D6F045E00A317C4 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
+		04A43B972D6F30C100A317C4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = Localizable.strings; sourceTree = "<group>"; };
+		04A43B9A2D6F30C100A317C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
+		04A43B9F2D6F30D500A317C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		04ABD5502D4ED771002D098A /* FormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormViewController.swift; sourceTree = "<group>"; };
 		04C3607E2D5F878F00EEC72C /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1068F04768182A744BC0A6F8 /* Pods-Forms Gen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forms Gen.release.xcconfig"; path = "Target Support Files/Pods-Forms Gen/Pods-Forms Gen.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +168,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04A43B952D6F045E00A317C4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				04A43B942D6F045E00A317C4 /* LocalizationKeys.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		04A43B992D6F30C100A317C4 /* ar.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				04A43B982D6F30C100A317C4 /* Localizable.strings */,
+			);
+			path = ar.lproj;
+			sourceTree = "<group>";
+		};
+		04A43B9C2D6F30C100A317C4 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				04A43B9B2D6F30C100A317C4 /* Localizable.strings */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
 		04ABD54F2D4ED746002D098A /* Forms */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +301,8 @@
 		DC1E55E72383BDA80012D77E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				04A43B992D6F30C100A317C4 /* ar.lproj */,
+				04A43B9C2D6F30C100A317C4 /* Base.lproj */,
 				DC1E55BF2383BCF30012D77E /* Assets.xcassets */,
 				DC1E55C42383BCF30012D77E /* Info.plist */,
 				DC1E55BC2383BCF00012D77E /* Swift_MVVM_Boilerplate.xcdatamodeld */,
@@ -395,6 +428,7 @@
 		DC80D67C2383ECB300EA5A05 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				04A43B952D6F045E00A317C4 /* Constants */,
 				DC46F266238D0E69005E70BA /* Helpers */,
 				DCA1BFB323856C7C00580709 /* Extentions */,
 				DCA1BFB423856C9200580709 /* Constants.swift */,
@@ -516,6 +550,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = DC1E55A72383BCF00012D77E;
 			preferredProjectObjectVersion = 77;
@@ -537,6 +572,8 @@
 			files = (
 				DC1E55C32383BCF30012D77E /* LaunchScreen.storyboard in Resources */,
 				DC44D2A123C70E87006A3B30 /* Dashboard.storyboard in Resources */,
+				04A43B9D2D6F30C100A317C4 /* Localizable.strings in Resources */,
+				04A43B9E2D6F30C100A317C4 /* Localizable.strings in Resources */,
 				DC46F265238D08FF005E70BA /* Settings.bundle in Resources */,
 				DC1E55C02383BCF30012D77E /* Assets.xcassets in Resources */,
 				DC1E55BB2383BCF00012D77E /* Main.storyboard in Resources */,
@@ -718,6 +755,7 @@
 				DC6A04E323FE8BA1004069AD /* NetworkManager.swift in Sources */,
 				DC80D682238414C400EA5A05 /* LoginViewModel.swift in Sources */,
 				DC6A04E123FE8BA1004069AD /* EndPoints.swift in Sources */,
+				04A43B962D6F045E00A317C4 /* LocalizationKeys.swift in Sources */,
 				DC6A04E223FE8BA1004069AD /* APIResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -754,6 +792,23 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		04A43B982D6F30C100A317C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A43B972D6F30C100A317C4 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		04A43B9B2D6F30C100A317C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04A43B9A2D6F30C100A317C4 /* Base */,
+				04A43B9F2D6F30D500A317C4 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		DC1E55B92383BCF00012D77E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -291,7 +291,7 @@
         <!--All Forms-->
         <scene sceneID="0tP-xR-2G4">
             <objects>
-                <viewController id="XxB-a1-Dx8" sceneMemberID="viewController">
+                <viewController id="XxB-a1-Dx8" customClass="HomeViewController" customModule="Forms_Gen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TBl-KJ-gTP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -337,6 +337,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="gKp-mi-f0r" id="toA-uA-VlR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lT-yb-W2O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

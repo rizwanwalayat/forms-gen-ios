@@ -1,0 +1,20 @@
+// Common
+"ok" = "OK";
+"cancel" = "Cancel";
+"error" = "Error";
+"success" = "Success";
+
+// Home
+"all_forms" = "All Forms";
+"search_forms" = "Search for forms or folders";
+"date_modified" = "Date Modified";
+"recent_forms" = "Recent Forms";
+"shared_forms" = "Shared Forms";
+"trashed_forms" = "Trashed Forms";
+
+// Auth
+"login" = "Login";
+"signup" = "Sign Up";
+"email" = "Email";
+"password" = "Password";
+"forgot_password" = "Forgot Password?"; 

@@ -1,0 +1,20 @@
+// Common
+"ok" = "موافق";
+"cancel" = "إلغاء";
+"error" = "خطأ";
+"success" = "نجاح";
+
+// Home
+"all_forms" = "جميع النماذج";
+"search_forms" = "البحث عن النماذج أو المجلدات";
+"date_modified" = "تاريخ التعديل";
+"recent_forms" = "النماذج الحديثة";
+"shared_forms" = "النماذج المشتركة";
+"trashed_forms" = "النماذج المحذوفة";
+
+// Auth
+"login" = "تسجيل الدخول";
+"signup" = "إنشاء حساب";
+"email" = "البريد الإلكتروني";
+"password" = "كلمة المرور";
+"forgot_password" = "نسيت كلمة المرور؟"; 

@@ -10,9 +10,16 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupUI()
+    }
+
+    private func setupUI() {
+        // Using localized strings
+        title = LocalizationKeys.Home.title.localized
+        searchBar.placeholder = LocalizationKeys.Home.searchPlaceholder.localized
     }
 
     /*
