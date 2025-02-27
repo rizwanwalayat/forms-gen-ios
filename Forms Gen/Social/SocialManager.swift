@@ -11,9 +11,9 @@ import FirebaseCore
 import FirebaseAuth
 import GoogleSignIn
 import AuthenticationServices
-import FBSDKShareKit
-import FBSDKLoginKit
-import FBSDKCoreKit
+//import FBSDKShareKit
+//import FBSDKLoginKit
+//import FBSDKCoreKit
 
 protocol SocialManagerDelegate: AnyObject {
     func didLoginSuccessFully(socialType: SocialLoginType)
@@ -44,17 +44,28 @@ class SocialManager: NSObject {
     fileprivate func loginWithGoogleWithDelegate(delegate: SocialManagerDelegate) {
         self.delegateSocialManager = delegate
         
+        // Configure scopes before sign in
+        let scopes = ["https://www.googleapis.com/auth/drive",
+                      "https://www.googleapis.com/auth/forms.body"]
+        
+        
         if let safeDelegate = delegateSocialManager as? UIViewController {
-            GIDSignIn.sharedInstance.signIn(withPresenting: safeDelegate) { signInResult, error in
+            GIDSignIn.sharedInstance.signIn(
+                withPresenting: safeDelegate,
+                hint: "drive & forms",
+                additionalScopes: scopes
+            ) { signInResult, error in
                 if error == nil {
                     if let user = signInResult?.user,
                        let idToken = user.idToken?.tokenString {
                         let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                                       accessToken: user.accessToken.tokenString)
+                                                                   accessToken: user.accessToken.tokenString)
                         // Firebase SignIn
                         Auth.auth().signIn(with: credential) { authResult, error in
                             if let authResult {
                                 print("Firebase User signed In: ", authResult.user.uid)
+                                // Configure DriveManager after successful sign in
+                                DriveManager.shared.configure()
                                 if let safeDelegate = self.delegateSocialManager {
                                     safeDelegate.didLoginSuccessFully(socialType: SocialLoginType.google)
                                 }
@@ -65,49 +76,50 @@ class SocialManager: NSObject {
             }
         }
     }
+
     fileprivate func loginWithFacebookWithDelegate(delegate: SocialManagerDelegate) {
-        self.delegateSocialManager = delegate
+//        self.delegateSocialManager = delegate
 
-        if let safeDelegate = delegateSocialManager as? UIViewController {
-            let fbLoginManager: LoginManager = LoginManager()
-            fbLoginManager.logIn(permissions: ["email", "public_profile"], from: safeDelegate) { (result, error) in
-                if error == nil {
-                    if let fbloginresult = result {
-                        if fbloginresult.isCancelled {
-                        } else if fbloginresult.grantedPermissions.contains("email") {
-                            self.returnUserData()
-                            // fbLoginManager.logOut()
-                        }
-                    }
-                }
-            }
-        }
+//        if let safeDelegate = delegateSocialManager as? UIViewController {
+//            let fbLoginManager: LoginManager = LoginManager()
+//            fbLoginManager.logIn(permissions: ["email", "public_profile"], from: safeDelegate) { (result, error) in
+//                if error == nil {
+//                    if let fbloginresult = result {
+//                        if fbloginresult.isCancelled {
+//                        } else if fbloginresult.grantedPermissions.contains("email") {
+//                            self.returnUserData()
+//                            // fbLoginManager.logOut()
+//                        }
+//                    }
+//                }
+//            }
+//        }
     }
 
-    fileprivate func returnUserData() {
-        let graphRequest: GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "email,name"])
-        graphRequest.start(completionHandler: { (_, result, error) in
-            if error != nil {
-                // Process error
-                print("\n\n Error: \(String(describing: error))")
-            } else {
-                if let resultDic = result as? NSDictionary {
-                    print("\n\n  fetched user: \(String(describing: result))")
-
-                    if let userName = resultDic.value(forKey: "name") as? String {
-                        print("\n User Name is: \(userName)")
-                    }
-
-                    if let userEmail = resultDic.value(forKey: "email") as? String {
-                        print("\n User Email is: \(String(describing: userEmail))")
-                    }
-                }
-            }
-            if let safeDelegate = self.delegateSocialManager {
-                safeDelegate.didLoginSuccessFully(socialType: SocialLoginType.faceBook)
-            }
-        })
-    }
+//    fileprivate func returnUserData() {
+//        let graphRequest: GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "email,name"])
+//        graphRequest.start(completionHandler: { (_, result, error) in
+//            if error != nil {
+//                // Process error
+//                print("\n\n Error: \(String(describing: error))")
+//            } else {
+//                if let resultDic = result as? NSDictionary {
+//                    print("\n\n  fetched user: \(String(describing: result))")
+//
+//                    if let userName = resultDic.value(forKey: "name") as? String {
+//                        print("\n User Name is: \(userName)")
+//                    }
+//
+//                    if let userEmail = resultDic.value(forKey: "email") as? String {
+//                        print("\n User Email is: \(String(describing: userEmail))")
+//                    }
+//                }
+//            }
+//            if let safeDelegate = self.delegateSocialManager {
+//                safeDelegate.didLoginSuccessFully(socialType: SocialLoginType.faceBook)
+//            }
+//        })
+//    }
 
     fileprivate func loginWithAppleWithDelegate(delegate: SocialManagerDelegate) {
         self.delegateSocialManager = delegate

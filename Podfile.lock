@@ -1161,30 +1161,6 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.36):
     - BoringSSL-GRPC/Interface (= 0.0.36)
   - BoringSSL-GRPC/Interface (0.0.36)
-  - FacebookCore (0.9.0):
-    - FBSDKCoreKit (~> 5.0)
-  - FacebookLogin (0.9.0):
-    - FacebookCore (~> 0.9.0)
-    - FBSDKCoreKit (~> 5.0)
-    - FBSDKLoginKit (~> 5.0)
-  - FacebookShare (0.9.0):
-    - FacebookCore (~> 0.9.0)
-    - FBSDKCoreKit (~> 5.0)
-    - FBSDKShareKit (~> 5.0)
-  - FBSDKCoreKit (5.15.1):
-    - FBSDKCoreKit/Basics (= 5.15.1)
-    - FBSDKCoreKit/Core (= 5.15.1)
-  - FBSDKCoreKit/Basics (5.15.1)
-  - FBSDKCoreKit/Core (5.15.1):
-    - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (5.15.1):
-    - FBSDKLoginKit/Login (= 5.15.1)
-  - FBSDKLoginKit/Login (5.15.1):
-    - FBSDKCoreKit (~> 5.0)
-  - FBSDKShareKit (5.15.1):
-    - FBSDKShareKit/Share (= 5.15.1)
-  - FBSDKShareKit/Share (5.15.1):
-    - FBSDKCoreKit (~> 5.0)
   - FirebaseAnalytics (11.7.0):
     - FirebaseAnalytics/AdIdSupport (= 11.7.0)
     - FirebaseCore (~> 11.7.0)
@@ -1267,6 +1243,14 @@ PODS:
     - nanopb (~> 3.30910.0)
     - PromisesSwift (~> 2.1)
   - FirebaseSharedSwift (11.7.0)
+  - GoogleAPIClientForREST/Core (4.1.0):
+    - GTMSessionFetcher/Full (< 5.0, >= 1.6.1)
+  - GoogleAPIClientForREST/Drive (4.1.0):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher/Full (< 5.0, >= 1.6.1)
+  - GoogleAPIClientForREST/Forms (4.1.0):
+    - GoogleAPIClientForREST/Core
+    - GTMSessionFetcher/Full (< 5.0, >= 1.6.1)
   - GoogleAppMeasurement (11.7.0):
     - GoogleAppMeasurement/AdIdSupport (= 11.7.0)
     - GoogleUtilities/AppDelegateSwizzler (~> 8.0)
@@ -1416,6 +1400,8 @@ PODS:
     - AppAuth/Core (~> 1.7)
     - GTMSessionFetcher/Core (< 4.0, >= 3.3)
   - GTMSessionFetcher/Core (3.5.0)
+  - GTMSessionFetcher/Full (3.5.0):
+    - GTMSessionFetcher/Core
   - IQKeyboardManager (6.5.19)
   - Kingfisher (8.1.4)
   - KRActivityIndicatorView (3.0.8)
@@ -1435,13 +1421,12 @@ PODS:
   - SwiftLint (0.58.1)
 
 DEPENDENCIES:
-  - FacebookCore
-  - FacebookLogin
-  - FacebookShare
   - FirebaseAnalytics
   - FirebaseAuth
   - FirebaseCrashlytics
   - FirebaseFirestore
+  - GoogleAPIClientForREST/Drive
+  - GoogleAPIClientForREST/Forms
   - GoogleSignIn
   - IQKeyboardManager
   - Kingfisher
@@ -1455,12 +1440,6 @@ SPEC REPOS:
     - AppAuth
     - AppCheckCore
     - BoringSSL-GRPC
-    - FacebookCore
-    - FacebookLogin
-    - FacebookShare
-    - FBSDKCoreKit
-    - FBSDKLoginKit
-    - FBSDKShareKit
     - FirebaseAnalytics
     - FirebaseAppCheckInterop
     - FirebaseAuth
@@ -1475,6 +1454,7 @@ SPEC REPOS:
     - FirebaseRemoteConfigInterop
     - FirebaseSessions
     - FirebaseSharedSwift
+    - GoogleAPIClientForREST
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleSignIn
@@ -1500,12 +1480,6 @@ SPEC CHECKSUMS:
   AppAuth: d4f13a8fe0baf391b2108511793e4b479691fb73
   AppCheckCore: cc8fd0a3a230ddd401f326489c99990b013f0c4f
   BoringSSL-GRPC: ca6a8e5d04812fce8ffd6437810c2d46f925eaeb
-  FacebookCore: ba86524b66cfa86d0f8e65d08faa8504a9f732dd
-  FacebookLogin: 6cee9fd6e1fe976fe8f7eec199e27b28b14f5d63
-  FacebookShare: 85968ad1b1606c4944fb154924e425fd29184ea5
-  FBSDKCoreKit: 1d5acf7c9d7a2f92bb1a242dc60cae5b7adb91df
-  FBSDKLoginKit: f1ea8026a58b52d30c9f2e6a58ca7d813619fb83
-  FBSDKShareKit: 259737eab3cc807087374553abdf588b3096ba55
   FirebaseAnalytics: bc9e565af9044ba8d6c6e4157e4edca8e5fdf7ec
   FirebaseAppCheckInterop: 2376d3ec5cb4267facad4fe754ab4f301a5a519b
   FirebaseAuth: 77e25aa24f3e1c626c5babd3338551fc1669ee0e
@@ -1520,6 +1494,7 @@ SPEC CHECKSUMS:
   FirebaseRemoteConfigInterop: ca12abf9da0003efd3a476b2dff4f7a04fd31b4f
   FirebaseSessions: 32ed7a9387ae71efe3a35a7f20f3a7292950957b
   FirebaseSharedSwift: a45efd84d60ebbfdcdbaebc66948af3630459e62
+  GoogleAPIClientForREST: 9483c112c80ffcac161766f508c1167d301accfd
   GoogleAppMeasurement: 0471a5b5bff51f3a91b1e76df22c952d04c63967
   GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
   GoogleSignIn: ce8c89bb9b37fb624b92e7514cc67335d1e277e4
@@ -1540,6 +1515,6 @@ SPEC CHECKSUMS:
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftLint: 6c8820d22c8f74baadd5684e00bb7356c34610a1
 
-PODFILE CHECKSUM: ab4cd6d09beaca2241763ccd81d56dcab02f7821
+PODFILE CHECKSUM: 64b67d8b251b8014fd0fc2ea882d2f572ed8ae20
 
 COCOAPODS: 1.16.2

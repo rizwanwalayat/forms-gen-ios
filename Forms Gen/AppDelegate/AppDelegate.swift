@@ -11,9 +11,7 @@ import CoreData
 import FirebaseCore
 import IQKeyboardManager
 import GoogleSignIn
-import FacebookCore
-import FacebookLogin
-import FacebookShare
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,11 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        let fbLogin = ApplicationDelegate.shared.application(app, open: url, options: options)
 
         let googleLogin = GIDSignIn.sharedInstance.handle(url)
 
-        return fbLogin || googleLogin
+        return googleLogin
     }
 
     // MARK: UISceneSession Lifecycle

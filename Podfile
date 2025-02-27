@@ -23,11 +23,14 @@ target 'Forms Gen' do
   
   pod 'GoogleSignIn'
   
-  pod 'FacebookLogin'
-  pod 'FacebookCore'
-  pod 'FacebookShare'
+#  pod 'FacebookLogin'
+#  pod 'FacebookCore'
+#  pod 'FacebookShare'
   
   pod 'SwiftLint'
+  
+  pod 'GoogleAPIClientForREST/Drive'  # For Google Drive API
+  pod 'GoogleAPIClientForREST/Forms'  # For Google Forms API
   
   # Pods for Forms Gen
 
