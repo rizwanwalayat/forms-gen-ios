@@ -31,6 +31,7 @@ target 'Forms Gen' do
   
   pod 'GoogleAPIClientForREST/Drive'  # For Google Drive API
   pod 'GoogleAPIClientForREST/Forms'  # For Google Forms API
+  pod 'GTMAppAuth'
   
   # Pods for Forms Gen
 

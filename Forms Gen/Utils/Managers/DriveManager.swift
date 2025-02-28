@@ -1,6 +1,7 @@
 import GoogleSignIn
 import GoogleAPIClientForREST
 import GTMSessionFetcher
+//import GTMAppAuth
 
 class DriveManager {
     static let shared = DriveManager()
@@ -13,7 +14,7 @@ class DriveManager {
     
     func configure() {
         if let user = GIDSignIn.sharedInstance.currentUser {
-            service.authorizer = user.authentication.fetcherAuthorizer()
+            service.authorizer = user.fetcherAuthorizer
         }
     }
     

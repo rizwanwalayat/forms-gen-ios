@@ -314,21 +314,49 @@
                                                         <constraint firstAttribute="height" constant="40" id="ZkY-J7-T6G"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vk8-F2-fAa">
-                                                    <rect key="frame" x="69" y="15" width="42" height="20"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZmM-nA-bea">
+                                                    <rect key="frame" x="65" y="0.0" width="287" height="50"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vk8-F2-fAa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="287" height="29"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIV-Fk-8Nt">
+                                                            <rect key="frame" x="0.0" y="30" width="287" height="20"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Yl-nW-9Dv">
+                                                    <rect key="frame" x="357" y="7.5" width="20" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="gbF-lM-cKL"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="More"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NRh-vU-Xej" firstAttribute="top" secondItem="EON-Yx-tOt" secondAttribute="top" constant="5" id="4Jx-lw-wlh"/>
-                                                <constraint firstItem="Vk8-F2-fAa" firstAttribute="centerY" secondItem="NRh-vU-Xej" secondAttribute="centerY" id="9EQ-0z-PG3"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZmM-nA-bea" secondAttribute="bottom" id="AIR-bq-lOR"/>
+                                                <constraint firstItem="1Yl-nW-9Dv" firstAttribute="leading" secondItem="ZmM-nA-bea" secondAttribute="trailing" priority="750" constant="5" id="H6u-74-xgH"/>
+                                                <constraint firstItem="ZmM-nA-bea" firstAttribute="leading" secondItem="NRh-vU-Xej" secondAttribute="trailing" constant="12" id="Ie6-eO-AAy"/>
+                                                <constraint firstAttribute="trailing" secondItem="1Yl-nW-9Dv" secondAttribute="trailing" constant="5" id="Wsk-fE-xwX"/>
                                                 <constraint firstItem="NRh-vU-Xej" firstAttribute="leading" secondItem="EON-Yx-tOt" secondAttribute="leading" constant="5" id="g9k-zT-3Ij"/>
-                                                <constraint firstItem="Vk8-F2-fAa" firstAttribute="leading" secondItem="NRh-vU-Xej" secondAttribute="trailing" constant="16" id="pU5-nL-wpA"/>
+                                                <constraint firstItem="ZmM-nA-bea" firstAttribute="top" secondItem="EON-Yx-tOt" secondAttribute="top" id="hQt-D3-Xbl"/>
                                                 <constraint firstAttribute="bottom" secondItem="NRh-vU-Xej" secondAttribute="bottom" constant="5" id="rww-SF-Fsf"/>
+                                                <constraint firstItem="1Yl-nW-9Dv" firstAttribute="centerY" secondItem="EON-Yx-tOt" secondAttribute="centerY" id="tKv-G6-pbG"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="cIV-Fk-8Nt" id="5cG-hl-aiU"/>
+                                            <outlet property="sharedIcon" destination="NRh-vU-Xej" id="cyF-7I-sAx"/>
+                                            <outlet property="titleLabel" destination="Vk8-F2-fAa" id="Mop-i3-2mg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -477,6 +505,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="More" width="20" height="21"/>
         <image name="RecentFolder" width="38" height="31"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house" catalog="system" width="128" height="104"/>

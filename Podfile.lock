@@ -1428,6 +1428,7 @@ DEPENDENCIES:
   - GoogleAPIClientForREST/Drive
   - GoogleAPIClientForREST/Forms
   - GoogleSignIn
+  - GTMAppAuth
   - IQKeyboardManager
   - Kingfisher
   - KRProgressHUD
@@ -1515,6 +1516,6 @@ SPEC CHECKSUMS:
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftLint: 6c8820d22c8f74baadd5684e00bb7356c34610a1
 
-PODFILE CHECKSUM: 64b67d8b251b8014fd0fc2ea882d2f572ed8ae20
+PODFILE CHECKSUM: 0c7981e599ae824deacdc88782c37391a0b9d5b8
 
 COCOAPODS: 1.16.2

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04995EC02D721C4E00ACD725 /* UIFont+Inter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04995EBF2D721C4E00ACD725 /* UIFont+Inter.swift */; };
 		04A43B962D6F045E00A317C4 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A43B942D6F045E00A317C4 /* LocalizationKeys.swift */; };
 		04A43B9D2D6F30C100A317C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A43B9B2D6F30C100A317C4 /* Localizable.strings */; };
 		04A43B9E2D6F30C100A317C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04A43B982D6F30C100A317C4 /* Localizable.strings */; };
@@ -96,6 +97,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04995EBF2D721C4E00ACD725 /* UIFont+Inter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Inter.swift"; sourceTree = "<group>"; };
 		04A43B942D6F045E00A317C4 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		04A43B972D6F30C100A317C4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = Localizable.strings; sourceTree = "<group>"; };
 		04A43B9A2D6F30C100A317C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
@@ -542,6 +544,7 @@
 		DCA1BFB323856C7C00580709 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				04995EBF2D721C4E00ACD725 /* UIFont+Inter.swift */,
 				DC80D67D2383ECD900EA5A05 /* UIColorExtention.swift */,
 				DC80D67F2384103700EA5A05 /* UIButtonExtention.swift */,
 				DC80D6832384247100EA5A05 /* UIViewControllerExtention.swift */,
@@ -863,6 +866,7 @@
 				04A43BA42D6FADD700A317C4 /* DriveManager.swift in Sources */,
 				DC46F268238D0E9B005E70BA /* SettingsBundleHelper.swift in Sources */,
 				DC6A04E723FE8BA1004069AD /* EndPointType.swift in Sources */,
+				04995EC02D721C4E00ACD725 /* UIFont+Inter.swift in Sources */,
 				DCA1BFBD23858E7900580709 /* ResetPasswordViewController.swift in Sources */,
 				DC6A04EC23FE8FB2004069AD /* Strings.swift in Sources */,
 				DCA1BFB2238553C900580709 /* ForgotPasswordViewModel.swift in Sources */,

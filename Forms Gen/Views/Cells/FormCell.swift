@@ -14,7 +14,11 @@ class FormCell: UITableViewCell {
     
     func configure(with form: Form) {
         titleLabel.text = form.name
-        dateLabel.text = form.modifiedDate.formatted()
+        if #available(iOS 15.0, *) {
+            dateLabel.text = form.modifiedDate.formatted()
+        } else {
+            dateLabel.text = "\(form.modifiedDate)"
+        }
         sharedIcon.isHidden = !form.isShared
     }
 } 
