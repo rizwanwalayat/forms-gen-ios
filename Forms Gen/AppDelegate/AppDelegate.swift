@@ -24,8 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if error != nil || user == nil {
               // Show the app's signed-out state.
+                RedirectionHelper.redirectToLogin()
             } else {
               // Show the app's signed-in state.
+                DriveManager.shared.configure()
                 RedirectionHelper.redirectToDashboard()
             }
           }

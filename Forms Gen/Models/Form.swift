@@ -6,11 +6,13 @@ struct Form {
     let name: String
     let modifiedDate: Date
     let isShared: Bool
+    let thumbnailLink: String?
     
     init(from driveFile: GTLRDrive_File) {
         self.id = driveFile.identifier ?? ""
         self.name = driveFile.name ?? ""
         self.modifiedDate = driveFile.modifiedTime?.date ?? Date()
         self.isShared = !(driveFile.permissions?.isEmpty ?? true)
+        self.thumbnailLink = driveFile.thumbnailLink
     }
 } 

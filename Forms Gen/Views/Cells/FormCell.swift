@@ -3,7 +3,8 @@ import UIKit
 class FormCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var sharedIcon: UIImageView!
+    @IBOutlet weak var fileIcon: UIImageView!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +20,20 @@ class FormCell: UITableViewCell {
         } else {
             dateLabel.text = "\(form.modifiedDate)"
         }
-        sharedIcon.isHidden = !form.isShared
+        
+        // Load the thumbnail image
+        if let thumbnailURL = form.thumbnailLink, let url = URL(string: thumbnailURL) {
+            // Use a library like SDWebImage or URLSession to load the image asynchronously
+            // Example using URLSession:
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.fileIcon.image = image
+                    }
+                }
+            }.resume()
+        } else {
+            fileIcon.image = nil // Clear the image if no thumbnail
+        }
     }
 } 
