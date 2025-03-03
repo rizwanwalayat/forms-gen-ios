@@ -9,6 +9,11 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Search-->
         <scene sceneID="4Uh-qE-hst">
@@ -319,14 +324,14 @@
                                                     <rect key="frame" x="65" y="5" width="287" height="40"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vk8-F2-fAa">
-                                                            <rect key="frame" x="0.0" y="0.0" width="287" height="24"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="287" height="23.5"/>
+                                                            <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
                                                             <color key="textColor" name="text"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIV-Fk-8Nt">
-                                                            <rect key="frame" x="0.0" y="23" width="287" height="17"/>
-                                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                            <rect key="frame" x="0.0" y="22.5" width="287" height="17.5"/>
+                                                            <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="12"/>
                                                             <color key="textColor" name="subheading"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -363,6 +368,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bCa-fI-sGA">
+                                <rect key="frame" x="288" y="703" width="110" height="100"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Plus"/>
+                            </button>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="gKp-mi-f0r">
                                 <rect key="frame" x="16" y="92" width="382" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -379,8 +389,10 @@
                             <constraint firstItem="hLN-UW-Ldz" firstAttribute="trailing" secondItem="gKp-mi-f0r" secondAttribute="trailing" constant="16" id="Jfd-gB-mmb"/>
                             <constraint firstItem="gKp-mi-f0r" firstAttribute="top" secondItem="hLN-UW-Ldz" secondAttribute="top" id="UsE-KO-xCu"/>
                             <constraint firstItem="hLN-UW-Ldz" firstAttribute="trailing" secondItem="trS-o8-NET" secondAttribute="trailing" constant="16" id="jxI-6i-vSf"/>
+                            <constraint firstItem="bCa-fI-sGA" firstAttribute="trailing" secondItem="trS-o8-NET" secondAttribute="trailing" id="lCx-q9-Bhx"/>
                             <constraint firstItem="trS-o8-NET" firstAttribute="top" secondItem="gKp-mi-f0r" secondAttribute="bottom" constant="10" id="miN-2R-hSw"/>
                             <constraint firstItem="hLN-UW-Ldz" firstAttribute="bottom" secondItem="trS-o8-NET" secondAttribute="bottom" constant="10" id="nxW-1a-HUw"/>
+                            <constraint firstItem="bCa-fI-sGA" firstAttribute="bottom" secondItem="trS-o8-NET" secondAttribute="bottom" id="us7-AH-6Ft"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="All Forms" id="IFC-n2-q0O">
@@ -510,6 +522,7 @@
     <resources>
         <image name="Folder" width="38" height="31"/>
         <image name="More" width="20" height="21"/>
+        <image name="Plus" width="86" height="86"/>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="line.horizontal.3" catalog="system" width="128" height="65"/>

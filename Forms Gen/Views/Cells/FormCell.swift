@@ -9,7 +9,7 @@ class FormCell: UITableViewCell {
         super.awakeFromNib()
         // Set fonts immediately when cell is loaded from storyboard
         titleLabel.font = .inter(.medium, size: 16)
-        dateLabel.font = .inter(.regular, size: 14)
+        dateLabel.font = .inter(.regular, size: 12)
     }
     func configure(with form: Form) {
         titleLabel.text = form.name
