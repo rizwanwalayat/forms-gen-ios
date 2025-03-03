@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 60
     }
     
     private func fetchForms() {

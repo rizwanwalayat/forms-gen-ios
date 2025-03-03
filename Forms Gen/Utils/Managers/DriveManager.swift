@@ -19,16 +19,20 @@ class DriveManager {
     }
     func fetchForms(completion: @escaping ([GTLRDrive_File]?, Error?) -> Void) {
         let query = GTLRDriveQuery_FilesList.query()
-        // Search for Google Forms
+        // Search for Google Forms and folders
         query.q = "mimeType='application/vnd.google-apps.form' or mimeType='application/vnd.google-apps.folder'"
-        query.fields = "files(id,name,modifiedTime,permissions,thumbnailLink)"
+        query.fields = "files(id,name,mimeType,modifiedTime,permissions,thumbnailLink)"
         service.executeQuery(query) { (ticket, result, error) in
             if let error = error {
                 completion(nil, error)
                 return
             }
             if let fileList = result as? GTLRDrive_FileList {
-                completion(fileList.files, nil)
+                let files = fileList.files ?? []
+                for file in files {
+                    print("Fetched file - ID: \(file.identifier ?? ""), Name: \(file.name ?? ""), MIME Type: \(file.mimeType ?? "Unknown")")
+                }
+                completion(files, nil)
             }
         }
     }

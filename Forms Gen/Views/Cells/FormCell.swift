@@ -13,24 +13,23 @@ class FormCell: UITableViewCell {
     }
     func configure(with form: Form) {
         titleLabel.text = form.name
-        if #available(iOS 15.0, *) {
-            dateLabel.text = form.modifiedDate.formatted()
+        dateLabel.text = form.formattedModifiedDate
+        
+        if form.isFolder {
+            fileIcon.image = UIImage(named: "Folder")
         } else {
-            dateLabel.text = "\(form.modifiedDate)"
-        }
-        // Load the thumbnail image
-        if let thumbnailURL = form.thumbnailLink, let url = URL(string: thumbnailURL) {
-            // Use a library like SDWebImage or URLSession to load the image asynchronously
-            // Example using URLSession:
-            URLSession.shared.dataTask(with: url) { data, response, error in
-                if let data = data, let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.fileIcon.image = image
+            // Load the thumbnail image
+            if let thumbnailURL = form.thumbnailLink, let url = URL(string: thumbnailURL) {
+                URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+                    if let data = data, let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            self?.fileIcon.image = image
+                        }
                     }
-                }
-            }.resume()
-        } else {
-            fileIcon.image = nil // Clear the image if no thumbnail
+                }.resume()
+            } else {
+                fileIcon.image = UIImage(systemName: "doc.fill")
+            }
         }
     }
 }
