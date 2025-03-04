@@ -18,3 +18,11 @@
 "email" = "Email";
 "password" = "Password";
 "forgot_password" = "Forgot Password?"; 
+
+"create_google_form" = "Create Google Form";
+"enter_your_answer" = "Enter your answer...";
+"select_question_type" = "Question Type";
+"short_answer" = "Short Answer";
+"multiple_choice" = "Multiple Choice";
+"checkbox" = "Checkbox";
+"paragraph" = "Paragraph";

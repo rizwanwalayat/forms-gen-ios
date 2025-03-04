@@ -1,3 +1,5 @@
+import Foundation
+
 enum LocalizationKeys {
     enum Common {
         static let ok = "ok"
@@ -22,4 +24,19 @@ enum LocalizationKeys {
         static let password = "password"
         static let forgotPassword = "forgot_password"
     }
+    
+    // Keys for CreateFormViewController
+    static let createGoogleFormTitle = "create_google_form"
+    
+    // Keys for QuestionCell
+    static let enterYourAnswer = "enter_your_answer"
+    
+    // Keys for QuestionTypeSelectionViewController
+    static let selectQuestionType = "select_question_type"
+    
+    // Keys for Question Types
+    static let shortAnswer = "short_answer"
+    static let multipleChoice = "multiple_choice"
+    static let checkbox = "checkbox"
+    static let paragraph = "paragraph"
 } 

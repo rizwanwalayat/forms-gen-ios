@@ -17,4 +17,13 @@
 "signup" = "إنشاء حساب";
 "email" = "البريد الإلكتروني";
 "password" = "كلمة المرور";
-"forgot_password" = "نسيت كلمة المرور؟"; 
+"forgot_password" = "نسيت كلمة المرور؟";
+
+// New keys from the code block
+"create_google_form" = "إنشاء نموذج جوجل";
+"enter_your_answer" = "أدخل إجابتك...";
+"select_question_type" = "نوع السؤال"; 
+"short_answer" = "إجابة قصيرة";
+"multiple_choice" = "اختيار من متعدد";
+"checkbox" = "مربع اختيار";
+"paragraph" = "فقرة"; 

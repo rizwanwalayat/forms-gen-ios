@@ -13,8 +13,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    private var forms: [Form] = []
-    private var filteredForms: [Form] = []
+    private var driveItems: [DriveItem] = []
+    private var folders: [DriveItem] = []
+    private var files: [DriveItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class HomeViewController: UIViewController {
     }
     
     private func fetchForms() {
-        DriveManager.shared.fetchForms { [weak self] (files, error) in
+        DriveManager.shared.fetchForms { [weak self] (items, error) in
             guard let self = self else { return }
             
             if let error = error {
@@ -42,9 +43,13 @@ class HomeViewController: UIViewController {
                 return
             }
             
-            if let files = files {
-                self.forms = files.map { Form(from: $0) }
-                self.filteredForms = self.forms
+            if let items = items {
+                self.driveItems = items
+                
+                // Separate folders and files
+                self.folders = self.driveItems.filter { $0.type == .folder }
+                self.files = self.driveItems.filter { $0.type == .file }
+                
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
                 }
@@ -56,14 +61,53 @@ class HomeViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2 // One for folders, one for files
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredForms.count
+        if section == 0 {
+            // Count folders
+            return folders.count
+        } else {
+            // Count files
+            return files.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FormCell", for: indexPath) as! FormCell
-        let form = filteredForms[indexPath.row]
-        cell.configure(with: form)
+        
+        let item: DriveItem
+        if indexPath.section == 0 {
+            // Get folder
+            item = folders[indexPath.row]
+        } else {
+            // Get file
+            item = files[indexPath.row]
+        }
+        
+        cell.titleLabel.text = item.name
+        cell.dateLabel.text = item.formattedModifiedDate
+        
+        if item.type == .folder {
+            cell.fileIcon.image = UIImage(named: "Folder")
+        } else {
+            // Load the thumbnail image
+            if let thumbnailURL = item.thumbnailLink, let url = URL(string: thumbnailURL) {
+                URLSession.shared.dataTask(with: url) { [weak cell] data, response, error in
+                    if let data = data, let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            cell?.fileIcon.image = image
+                        }
+                    }
+                }.resume()
+            } else {
+                cell.fileIcon.image = UIImage(systemName: "doc.fill")
+            }
+        }
+        
         return cell
     }
+    
 }
